@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Who's hotter?</title>
+  </head>
+  <style>
+    img {
+      float: left;
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+    }
+  </style>
+  <body>
+    <p>Who's hotter</p>
+    <image id="rando" alt="not found" onclick="location.reload()"></image>
+    <image id="random" alt="not found" onclick="location.reload()"></image>
+    <script>
+      var images = [];
+      for (let i = 1; i <= 471; i++) {
+        let number = i.toString();
+        while (number.length < 3) {
+          number = "0" + number;
+        }
+        images.push(
+          "https://exams.andhrauniversity.edu.in/filestorage/photo_signs/uploads/064/3-5-02/2021/photos/321506402" +
+            number +
+            ".jpg"
+        );
+      }
+      var randomNumber1 = Math.floor(Math.random() * images.length);
+      var randomNumber2 = Math.floor(Math.random() * images.length);
+      var randomImage1 = images[randomNumber1];
+      var randomImage2 = images[randomNumber2];
+      document.getElementById("rando").src = randomImage1;
+      document.getElementById("random").src = randomImage2;
+    </script>
+  </body>
+</html>
